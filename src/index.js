@@ -6,16 +6,16 @@ import registerServiceWorker from './registerServiceWorker';
 let bodyText = "Hello, my name is Hayden Hong.";
 let bodyText2 = "I'm a student at the University of Washington and I like to code.";
 let bodyText3 = "Please, for fuck's sake, just accept me into a god damn major.";
-let bodyText4 = "I can't take it anymore."
+let bodyText4 = "I can't take it anymore.";
 
-let randomChars = ["-", "/", "<", "?", ">"];
+let randomChars = ["-", "/", "<", ">"];
 
 renderText(0);
-
 function renderText(i) {
     let toPrint = bodyText;
     let toPrint2 = bodyText2;
     let toPrint3 = bodyText3;
+    let toPrint4 = bodyText4;
 
     // I know, this is some hot garbage. It will be fixed later.
     if (i < bodyText.length) {
@@ -30,6 +30,10 @@ function renderText(i) {
         toPrint3 = bodyText3.substring(0, i);
     }
 
+    if (i < bodyText4.length) {
+        toPrint4 = bodyText4.substring(0, i);
+    }
+
     for (let j = 0; j < bodyText.length - i; j++) {
         toPrint = toPrint + randomChars[Math.floor((Math.random() * randomChars.length))];
     }
@@ -39,6 +43,9 @@ function renderText(i) {
     for (let j = 0; j < bodyText3.length - i; j++) {
         toPrint3 = toPrint3 + randomChars[Math.floor((Math.random() * randomChars.length))];
     }
+    for (let j = 0; j < bodyText4.length - i; j++) {
+        toPrint4 = toPrint4 + randomChars[Math.floor((Math.random() * randomChars.length))];
+    }
 
 
     ReactDOM.render(
@@ -46,12 +53,13 @@ function renderText(i) {
             <p>{toPrint}</p>
             <p>{toPrint2}</p>
             <p>{toPrint3}</p>
-        </div>
-        , document.getElementById('root')
+            <p>{toPrint4}</p>
+        </div>,
+        document.getElementById('root')
     );
 
     if (i < 100) { // Dear god this is hard coded so badly
-        setTimeout(function() {renderText(i + 1)}, 10);
+        setTimeout(function() {renderText(i + 1)}, 15);
     }
 }
 

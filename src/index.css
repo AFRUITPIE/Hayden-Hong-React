@@ -1,12 +1,34 @@
 body {
   font-family: 'Roboto Mono', monospace;
   font-size: 21px;
-  background-color: #141414;
   color: white;
+  background-color: #141414;
 
   /*Alignment*/
-  vertical-align: middle;
-  margin-right: auto;
-  margin-left: auto;
-  width: 50%;
+  padding-top: 20%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+
+  /*Transition*/
+  animation: change-background 20s infinite;
+}
+
+@keyframes change-background {
+  0% {
+    color: white;
+    background-color: #141414;
+  }
+  25% {
+    color: white;
+    background-color: #4b2e83;
+  }
+  50% {
+    color: black;
+    background-color: #b7a57a;
+  }
+  100% {
+    color: white;
+    background-color: #141414;
+  }
 }
