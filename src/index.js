@@ -11,42 +11,62 @@ let bodyTextLines = [
 ];
 
 // Random characters that can be selected
-let randomChars = ["-", "/", "<", ">"];
+let randomChars = "QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm1234567890".split("");
 
 renderText(0);
 
 function renderText(i) {
     let tempBodyTextLines = [];
-
     for (let j = 0; j < bodyTextLines.length; j++) {
-
-        // Creates the substring if necessary
+        // Adds the substring
         if (i < bodyTextLines[j].length) {
             tempBodyTextLines.push(bodyTextLines[j].substring(0, i));
         } else {
             tempBodyTextLines.push(bodyTextLines[j]);
         }
 
-        // Adds random characters or the space for blank words
-        let numberCharsToAdd = bodyTextLines[j].length - tempBodyTextLines[j].length;
-        for (let k = 0; k < numberCharsToAdd; k++) {
-            // Adds correct spacing for words
-            if (bodyTextLines[j].charAt(k) === " ") {
-                tempBodyTextLines[j] = tempBodyTextLines[j] + " ";
-            } else {
+
+        let numberOfCharactersLeft = bodyTextLines[j].length - tempBodyTextLines[j].length;
+        let tempLength = tempBodyTextLines[j].length;
+        for (let k = 0; k < numberOfCharactersLeft; k++) {
+            if (bodyTextLines[j].charAt(tempLength + k) !== " ") {
                 tempBodyTextLines[j] = tempBodyTextLines[j] + randomChars[Math.floor((Math.random() * randomChars.length))];
+            } else {
+                tempBodyTextLines[j] = tempBodyTextLines[j] + " ";
             }
+
         }
     }
+
+
+
+
+    //
+    // for (let j = 0; j < bodyTextLines.length; j++) {
+    //     // Creates the substring if necessary
+    //     if (i < bodyTextLines[j].length) {
+    //         tempBodyTextLines.push(bodyTextLines[j].substring(0, i));
+    //     } else {
+    //         tempBodyTextLines.push(bodyTextLines[j]);
+    //     }
+    //
+    //     // Adds random characters or the space for blank words
+    //     let numberCharsToAdd = bodyTextLines[j].length - tempBodyTextLines[j].length;
+    //     let tempLength = tempBodyTextLines[j].length;
+    //     for (let k = bodyTextLines.length; k < numberCharsToAdd; k++) {
+    //         // Adds correct spacing for words
+    //         tempBodyTextLines[j] = tempBodyTextLines[j] + randomChars[Math.floor((Math.random() * randomChars.length))];
+    //         if (bodyTextLines[j].charAt(k + tempLength + 1) === " ") {
+    //             tempBodyTextLines[j] = tempBodyTextLines[j] + " ";
+    //         }
+    //     }
 
     // Creates multiple <p> tags for each line
     let printableLines = tempBodyTextLines.map((tempBodyTextLines) =>
         <p>{tempBodyTextLines}</p>
     );
 
-    printableLines.push(<a className="fadeInText" href="https://twitter.com/AFRUITPIE">Twitter</a>);
     printableLines.push(<a className="fadeInText" href="https://github.com/AFRUITPIE">GitHub</a>);
-    printableLines.push(<a className="fadeInText" href="https://us-west-2.console.aws.amazon.com/console/home?region=us-west-2#">LinkedIn</a>);
 
 
     ReactDOM.render(
@@ -56,7 +76,7 @@ function renderText(i) {
         document.getElementById('root')
     );
 
-    if (i < 500) { // Dear god this is hard coded so badly
+    if (i < 200) { // Dear god this is hard coded so badly
         setTimeout(function () {
             renderText(i + 1)
         }, 25);
