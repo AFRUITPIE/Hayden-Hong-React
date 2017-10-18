@@ -3,63 +3,58 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import registerServiceWorker from './registerServiceWorker';
 
-let bodyText = "Hello, my name is Hayden Hong.";
-let bodyText2 = "I'm a student at the University of Washington and I like to code.";
-let bodyText3 = "Please, for fuck's sake, just accept me into a god damn major.";
-let bodyText4 = "I can't take it anymore.";
+let bodyTextLines = [
+    "Hello.",
+    "My name is Hayden Hong.",
+    "I am a student at the University of Washington.",
+    "I love to code and I am passionate about software design.",
+    "Please accept me into informatics.",
+];
 
+// Random characters that can be selected
 let randomChars = ["-", "/", "<", ">"];
 
 renderText(0);
+
 function renderText(i) {
-    let toPrint = bodyText;
-    let toPrint2 = bodyText2;
-    let toPrint3 = bodyText3;
-    let toPrint4 = bodyText4;
+    let tempBodyTextLines = [];
 
-    // I know, this is some hot garbage. It will be fixed later.
-    if (i < bodyText.length) {
-        toPrint = bodyText.substring(0, i);
-    }
+    for (let j = 0; j < bodyTextLines.length; j++) {
 
-    if (i < bodyText2.length) {
-        toPrint2 = bodyText2.substring(0, i);
-    }
+        // Creates the substring if necessary
+        if (i < bodyTextLines[j].length) {
+            tempBodyTextLines.push(bodyTextLines[j].substring(0, i));
+        } else {
+            tempBodyTextLines.push(bodyTextLines[j]);
+        }
 
-    if (i < bodyText3.length) {
-        toPrint3 = bodyText3.substring(0, i);
-    }
-
-    if (i < bodyText4.length) {
-        toPrint4 = bodyText4.substring(0, i);
+        // FIXME this broke... of fucking course it did
+        for (let k = 0; k < bodyTextLines[j].length - tempBodyTextLines[j].length; k++) {
+            tempBodyTextLines[j] = tempBodyTextLines[j] + randomChars[Math.floor((Math.random() * randomChars.length))];
+        }
     }
 
-    for (let j = 0; j < bodyText.length - i; j++) {
-        toPrint = toPrint + randomChars[Math.floor((Math.random() * randomChars.length))];
-    }
-    for (let j = 0; j < bodyText2.length - i; j++) {
-        toPrint2 = toPrint2 + randomChars[Math.floor((Math.random() * randomChars.length))];
-    }
-    for (let j = 0; j < bodyText3.length - i; j++) {
-        toPrint3 = toPrint3 + randomChars[Math.floor((Math.random() * randomChars.length))];
-    }
-    for (let j = 0; j < bodyText4.length - i; j++) {
-        toPrint4 = toPrint4 + randomChars[Math.floor((Math.random() * randomChars.length))];
-    }
+    // Creates multiple <p> tags for each line
+    let printableLines = tempBodyTextLines.map((tempBodyTextLines) =>
+        <p>{tempBodyTextLines}</p>
+    );
+
+    printableLines.push(<a href="https://twitter.com/AFRUITPIE">Twitter</a>);
+    printableLines.push(<a href="https://github.com/AFRUITPIE">GitHub</a>);
+    printableLines.push(<a href="https://us-west-2.console.aws.amazon.com/console/home?region=us-west-2#">AWS</a>);
 
 
     ReactDOM.render(
         <div className="body">
-            <p>{toPrint}</p>
-            <p>{toPrint2}</p>
-            <p>{toPrint3}</p>
-            <p>{toPrint4}</p>
+            {printableLines}
         </div>,
         document.getElementById('root')
     );
 
-    if (i < 100) { // Dear god this is hard coded so badly
-        setTimeout(function() {renderText(i + 1)}, 15);
+    if (i < 500) { // Dear god this is hard coded so badly
+        setTimeout(function () {
+            renderText(i + 1)
+        }, 25);
     }
 }
 

@@ -1,34 +1,52 @@
 body {
-  font-family: 'Roboto Mono', monospace;
-  font-size: 21px;
-  color: white;
-  background-color: #141414;
+    /*Text info*/
+    font-family: 'Roboto Mono', monospace;
+    font-size: 21px;
+    color: white;
+    background-color: #141414;
 
-  /*Alignment*/
-  padding-top: 20%;
-  align-items: center;
-  display: flex;
-  justify-content: center;
+    /*Alignment*/
+    position: fixed;
+    width: 800px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
-  /*Transition*/
-  animation: change-background 20s infinite;
+    /*Transition*/
+    animation: change-background 20s infinite;
 }
 
 @keyframes change-background {
-  0% {
-    color: white;
-    background-color: #141414;
-  }
-  25% {
-    color: white;
-    background-color: #4b2e83;
-  }
-  50% {
-    color: black;
-    background-color: #b7a57a;
-  }
-  100% {
-    color: white;
-    background-color: #141414;
-  }
+    0% {
+        color: white;
+        background-color: #141414;
+    }
+    25% {
+        color: white;
+        background-color: #4b2e83;
+    }
+    50% {
+        color: black;
+        background-color: #b7a57a;
+    }
+    100% {
+        color: white;
+        background-color: #141414;
+    }
 }
+
+.fadeInText {
+    @extend body;
+    animation: fadeText 2s;
+    margin-right: 20px;
+}
+
+@keyframes fadeText {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
