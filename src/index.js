@@ -8,7 +8,6 @@ let bodyTextLines = [
     "My name is Hayden Hong.",
     "I am a student at the University of Washington.",
     "I love to code and I am passionate about software design.",
-    "Please accept me into informatics.",
 ];
 
 // Random characters that can be selected
@@ -28,9 +27,15 @@ function renderText(i) {
             tempBodyTextLines.push(bodyTextLines[j]);
         }
 
-        // FIXME this broke... of fucking course it did
-        for (let k = 0; k < bodyTextLines[j].length - tempBodyTextLines[j].length; k++) {
-            tempBodyTextLines[j] = tempBodyTextLines[j] + randomChars[Math.floor((Math.random() * randomChars.length))];
+        // Adds random characters or the space for blank words
+        let numberCharsToAdd = bodyTextLines[j].length - tempBodyTextLines[j].length;
+        for (let k = 0; k < numberCharsToAdd; k++) {
+            // Adds correct spacing for words
+            if (bodyTextLines[j].charAt(k) === " ") {
+                tempBodyTextLines[j] = tempBodyTextLines[j] + " ";
+            } else {
+                tempBodyTextLines[j] = tempBodyTextLines[j] + randomChars[Math.floor((Math.random() * randomChars.length))];
+            }
         }
     }
 
@@ -39,9 +44,9 @@ function renderText(i) {
         <p>{tempBodyTextLines}</p>
     );
 
-    printableLines.push(<a href="https://twitter.com/AFRUITPIE">Twitter</a>);
-    printableLines.push(<a href="https://github.com/AFRUITPIE">GitHub</a>);
-    printableLines.push(<a href="https://us-west-2.console.aws.amazon.com/console/home?region=us-west-2#">AWS</a>);
+    printableLines.push(<a className="fadeInText" href="https://twitter.com/AFRUITPIE">Twitter</a>);
+    printableLines.push(<a className="fadeInText" href="https://github.com/AFRUITPIE">GitHub</a>);
+    printableLines.push(<a className="fadeInText" href="https://us-west-2.console.aws.amazon.com/console/home?region=us-west-2#">LinkedIn</a>);
 
 
     ReactDOM.render(

@@ -7,12 +7,14 @@ body {
 
     /*Alignment*/
     position: fixed;
-    width: 800px;
+    width: 50%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    margin-right: 20px;
 
-    /*Transition*/
+
+  /*Transition*/
     animation: change-background 20s infinite;
 }
 
@@ -37,8 +39,9 @@ body {
 
 .fadeInText {
     @extend body;
-    animation: fadeText 2s;
+    /*animation: fadeText 4s;*/
     margin-right: 20px;
+    color: white;
 }
 
 @keyframes fadeText {
