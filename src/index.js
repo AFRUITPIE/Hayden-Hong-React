@@ -34,32 +34,8 @@ function renderText(i) {
             } else {
                 tempBodyTextLines[j] = tempBodyTextLines[j] + " ";
             }
-
         }
     }
-
-
-
-
-    //
-    // for (let j = 0; j < bodyTextLines.length; j++) {
-    //     // Creates the substring if necessary
-    //     if (i < bodyTextLines[j].length) {
-    //         tempBodyTextLines.push(bodyTextLines[j].substring(0, i));
-    //     } else {
-    //         tempBodyTextLines.push(bodyTextLines[j]);
-    //     }
-    //
-    //     // Adds random characters or the space for blank words
-    //     let numberCharsToAdd = bodyTextLines[j].length - tempBodyTextLines[j].length;
-    //     let tempLength = tempBodyTextLines[j].length;
-    //     for (let k = bodyTextLines.length; k < numberCharsToAdd; k++) {
-    //         // Adds correct spacing for words
-    //         tempBodyTextLines[j] = tempBodyTextLines[j] + randomChars[Math.floor((Math.random() * randomChars.length))];
-    //         if (bodyTextLines[j].charAt(k + tempLength + 1) === " ") {
-    //             tempBodyTextLines[j] = tempBodyTextLines[j] + " ";
-    //         }
-    //     }
 
     // Creates multiple <p> tags for each line
     let printableLines = tempBodyTextLines.map((tempBodyTextLines) =>
@@ -68,7 +44,6 @@ function renderText(i) {
 
     printableLines.push(<a className="fadeInText" href="https://github.com/AFRUITPIE">GitHub</a>);
 
-
     ReactDOM.render(
         <div className="body">
             {printableLines}
@@ -76,7 +51,8 @@ function renderText(i) {
         document.getElementById('root')
     );
 
-    if (i < 200) { // Dear god this is hard coded so badly
+    // FIXME: This is hard coded in the most disgusting way
+    if (i < 200) {
         setTimeout(function () {
             renderText(i + 1)
         }, 25);
