@@ -18,7 +18,8 @@ let randomChars = "QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm123456789
 let maxLineLength = getMaxLineLength(bodyTextLines);
 
 // Starts recursive renderText function
-renderText(0);
+// Starts at -25 for a small delay before starting the typewriter effect
+renderText(-25);
 
 /**
  * Creates lines of text with random lettering that quickly dissolves into the actual text.
