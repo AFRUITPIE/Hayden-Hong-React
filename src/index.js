@@ -17,6 +17,10 @@ let randomChars = "QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm123456789
 // Maximum line length, useful for @param i in renderText
 let maxLineLength = getMaxLineLength(bodyTextLines);
 
+// Whether or not the animation is currently running
+let animationRunning = true;
+
+
 // Starts recursive renderText function
 // Starts at -25 for a small delay before starting the typewriter effect
 renderText(-25);
@@ -51,7 +55,7 @@ function renderText(i) {
 
     // Creates multiple <p> tags for each line
     let printableLines = tempBodyTextLines.map((tempBodyTextLines) =>
-        <p>{tempBodyTextLines}</p>
+        <p onClick={handleClickBodyText}>{tempBodyTextLines}</p>
     );
 
     // Adds the GitHub link
@@ -70,6 +74,18 @@ function renderText(i) {
         setTimeout(function () {
             renderText(i + 1)
         }, 25);
+    } else {
+        animationRunning = false;
+    }
+}
+
+/**
+ * Handles re-running the animation if someone clicks on the body text.
+ */
+function handleClickBodyText() {
+    if (!animationRunning) {
+        animationRunning = true;
+        renderText(-10);
     }
 }
 
