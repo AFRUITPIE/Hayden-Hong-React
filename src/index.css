@@ -13,8 +13,7 @@ body {
     transform: translate(-50%, -50%);
     margin-right: 20px;
 
-
-  /*Transition*/
+    /*Transition*/
     animation: change-background 20s infinite;
 }
 
@@ -39,7 +38,7 @@ body {
 
 .fadeInText {
     @extend body;
-    /*animation: fadeText 4s;*/
+    animation: fadeText 5s;
     margin-right: 20px;
     color: white;
 }

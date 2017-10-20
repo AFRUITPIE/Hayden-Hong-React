@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import registerServiceWorker from './registerServiceWorker';
 
-// It's easiest to just hard code what lines will be what, rather than splitting by a scary regex.
+// It's easiest to just hard code what lines will be what, rather than splitting by a scary regex. :(
 let bodyTextLines = [
     "Hello.",
     "My name is Hayden Hong.",
@@ -12,6 +12,7 @@ let bodyTextLines = [
 ];
 
 // Random characters that can be selected, split into an array
+// Symbols would be nice but they aren't monospaced in Roboto Mono.
 let randomChars = "QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm1234567890".split("");
 
 // Maximum line length, useful for @param i in renderText
