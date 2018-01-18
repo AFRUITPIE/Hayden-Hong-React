@@ -60,7 +60,8 @@ function renderText(i) {
     );
 
     // Adds the GitHub link
-    printableLines.push(<a className="fadeInText" href="https://github.com/AFRUITPIE">GitHub</a>);
+    printableLines.push(<a href="https://github.com/AFRUITPIE">GitHub</a>);
+    printableLines.push(<a href = "https://www.linkedin.com/in/hayden-hong-software/">LinkedIn</a>);
 
     // Renders printableLines
     ReactDOM.render(

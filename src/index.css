@@ -17,6 +17,17 @@ body {
     animation: change-background 20s infinite;
 }
 
+a {
+    animation: change-background 20s infinite;
+    margin-right: 20px;
+    text-decoration: none; 
+    border-bottom: solid 0.01rem;
+}
+
+a:hover {
+    border-bottom: solid 0.2rem; 
+}
+
 @keyframes change-background {
     0% {
         color: white;
@@ -34,13 +45,6 @@ body {
         color: white;
         background-color: #141414;
     }
-}
-
-.fadeInText {
-    @extend body;
-    animation: fadeText 5s;
-    margin-right: 20px;
-    color: white;
 }
 
 @keyframes fadeText {
