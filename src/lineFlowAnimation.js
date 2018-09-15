@@ -17,6 +17,8 @@ class LineFlowAnimation extends React.Component {
       step: this.startupTime,
       printableLines: <p />
     };
+
+    this.handleClickBodyText = this.handleClickBodyText.bind(this);
   }
 
   /**
@@ -65,15 +67,7 @@ class LineFlowAnimation extends React.Component {
 
     // Creates multiple <p> tags for each line
     this.setState({
-      printableLines: tempLines.map(line => (
-        <p
-          onClick={() => {
-            this.handleClickBodyText();
-          }}
-        >
-          {line}
-        </p>
-      )),
+      printableLines: tempLines.map(line => <p onClick={this.handleClickBodyText}>{line}</p>),
       step: this.state.step + 1
     });
   }
@@ -82,12 +76,11 @@ class LineFlowAnimation extends React.Component {
    * Handles re-running the animation if someone clicks on the body text.
    */
   handleClickBodyText() {
-    if (this.state.step === this.maxLineLength) {
+    if (this.state.step >= this.maxLineLength) {
       this.setState({
         step: this.startupTime
       });
     }
-    this.generateRandomText();
   }
 
   render() {
