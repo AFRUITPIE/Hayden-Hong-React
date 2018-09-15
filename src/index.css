@@ -1,58 +1,58 @@
 body {
-    /*Text info*/
-    font-family: 'Roboto Mono', monospace;
-    font-size: 21px;
-    color: white;
-    background-color: #141414;
+  /*Text info*/
+  font-family: "Roboto Mono", monospace;
+  font-size: 21px;
+  color: white;
+  background-color: #141414;
 
-    /*Alignment*/
-    position: fixed;
-    width: 50%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    margin-right: 20px;
+  /*Alignment*/
+  position: fixed;
+  width: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-right: 20px;
 
-    /*Transition*/
-    animation: change-background 20s infinite;
+  /*Transition*/
+  animation: change-background 20s;
 }
 
 a {
-    animation: change-background 20s infinite;
-    margin-right: 20px;
-    text-decoration: none; 
-    border-bottom: solid 0.01rem;
+  animation: change-background 20s;
+  margin-right: 20px;
+  text-decoration: none;
+  border-bottom: solid 0.01rem;
+  color: white;
 }
 
 a:hover {
-    border-bottom: solid 0.2rem; 
+  border-bottom: solid 0.2rem;
 }
 
 @keyframes change-background {
-    0% {
-        color: white;
-        background-color: #141414;
-    }
-    25% {
-        color: white;
-        background-color: #4b2e83;
-    }
-    50% {
-        color: black;
-        background-color: #b7a57a;
-    }
-    100% {
-        color: white;
-        background-color: #141414;
-    }
+  0% {
+    color: white;
+    background-color: #141414;
+  }
+  25% {
+    color: white;
+    background-color: #4b2e83;
+  }
+  50% {
+    color: black;
+    background-color: #b7a57a;
+  }
+  100% {
+    color: white;
+    background-color: #141414;
+  }
 }
 
 @keyframes fadeText {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
-
