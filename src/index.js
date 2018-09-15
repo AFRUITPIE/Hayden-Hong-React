@@ -16,6 +16,7 @@ ReactDOM.render(
     />
     <a href="https://github.com/AFRUITPIE">GitHub</a>
     <a href="https://www.linkedin.com/in/hayden-hong-software/">LinkedIn</a>
+    <a href="https://itunes.apple.com/us/app/convertify-share-music/id1424728187">Convertify iOS</a>
   </div>,
   document.getElementById("root")
 );
