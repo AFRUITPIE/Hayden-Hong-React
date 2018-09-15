@@ -6,18 +6,24 @@ body {
   background-color: #141414;
 
   /*Alignment*/
-  position: fixed;
-  width: 50%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  margin-right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
 
   /*Transition*/
   animation: change-background 20s;
 }
 
+html {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
 a {
+  /* display: flex; */
   animation: change-background 20s;
   margin-right: 20px;
   text-decoration: none;
