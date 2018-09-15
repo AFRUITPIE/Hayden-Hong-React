@@ -3,7 +3,11 @@ body {
   font-family: "Roboto Mono", monospace;
   font-size: 21px;
   color: white;
-  background-color: #141414;
+
+  background: linear-gradient(-90deg, #84bd00, #fa57c1);
+  background-size: 300% 300%;
+  background-position: right top;
+  background-attachment: fixed;
 
   /*Alignment*/
   position: fixed;
@@ -14,11 +18,50 @@ body {
   margin-right: 20px;
 
   /*Transition*/
-  animation: change-background 20s;
+  animation: Gradient 10s ease infinite;
+}
+
+#body-text {
+  overflow-y: scroll;
+}
+
+@-webkit-keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@-moz-keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 a {
-  animation: change-background 20s;
   margin-right: 20px;
   text-decoration: none;
   border-bottom: solid 0.01rem;
@@ -27,32 +70,4 @@ a {
 
 a:hover {
   border-bottom: solid 0.2rem;
-}
-
-@keyframes change-background {
-  0% {
-    color: white;
-    background-color: #141414;
-  }
-  25% {
-    color: white;
-    background-color: #4b2e83;
-  }
-  50% {
-    color: black;
-    background-color: #b7a57a;
-  }
-  100% {
-    color: white;
-    background-color: #141414;
-  }
-}
-
-@keyframes fadeText {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
 }
