@@ -7,16 +7,21 @@ import registerServiceWorker from "./registerServiceWorker";
 ReactDOM.render(
   <div className="body-text">
     <img src="Icon.png" width="50" alt="app icon" />
-    <LineFlowAnimation
-      lines={[
-        "Convertify - Share Music",
-        "Open music in the correct app.",
-        "Just copy a link to Apple Music to open in Spotify,",
-        "or copy a link from Spotify to open in Apple Music."
-      ]}
-    />
-    <a href="https://itunes.apple.com/us/app/convertify-share-music/id1424728187">App Store</a>
-    <a href="http://haydenhong.com/convertify/privacy-policy/">Privacy Policy</a>
+    <p>Convertify privacy policy</p>
+    <p>
+      Convertify itself uses no user tracking. Convertify gathers no data, logs nothing, and the
+      developer cannot view anything that you are using Convertify for.
+    </p>
+    <p>
+      A Spotify Login is required, and thus{" "}
+      <a href="https://www.spotify.com/us/legal/privacy-policy/">Spotify's privacy policy</a> is
+      applicable.
+    </p>
+    <p>
+      Apple Music is also used, which means that{" "}
+      <a href="https://support.apple.com/en-us/HT204881">Apple Music's privacy policy</a> is also
+      applicable.
+    </p>
   </div>,
   document.getElementById("root")
 );
