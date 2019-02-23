@@ -16,7 +16,7 @@ ReactDOM.render(
     />
     <a href="https://github.com/AFRUITPIE">GitHub</a>
     <a href="https://www.linkedin.com/in/hayden-hong-software/">LinkedIn</a>
-    <a href="http://haydenhong.com/convertify/">Convertify</a>
+    <a href="convertify/index.html">Convertify</a>
   </div>,
   document.getElementById("root")
 );
