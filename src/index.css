@@ -3,7 +3,7 @@ body {
   font-family: "Roboto Mono", monospace;
   font-size: 21px;
   color: white;
-  background-color: #141414;
+  background-color: #232f3e;
 
   /*Alignment*/
   display: flex;
@@ -38,19 +38,15 @@ a:hover {
 @keyframes change-background {
   0% {
     color: white;
-    background-color: #141414;
-  }
-  25% {
-    color: white;
-    background-color: #4b2e83;
+    background-color: #146eb4;
   }
   50% {
     color: black;
-    background-color: #b7a57a;
+    background-color: #ff9900;
   }
   100% {
     color: white;
-    background-color: #141414;
+    background-color: #232f3e;
   }
 }
 

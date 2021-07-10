@@ -10,13 +10,12 @@ ReactDOM.render(
       lines={[
         "Hello.",
         "My name is Hayden Hong.",
-        "I am a student at the University of Washington.",
-        "I love to code and I am passionate about software design."
+        "I am a software development engineer at Amazon.",
+        "I also make iOS apps in my spare time."
       ]}
     />
     <a href="https://github.com/AFRUITPIE">GitHub</a>
     <a href="https://www.linkedin.com/in/hayden-hong-software/">LinkedIn</a>
-    <a href="convertify/index.html">Convertify</a>
   </div>,
   document.getElementById("root")
 );
